@@ -8,14 +8,12 @@
 
 body {
   font-family: 'Comic Sans MS';
-  font-size: x-large;
   display: flex;
   align-items: center;
   height: 100vh;
 }
 
 h1 {
-  font-size: 200%;
   padding: 1% 1%;
   font-weight: bold;
 }
@@ -34,7 +32,6 @@ h1 {
   display: block;
   position: relative;
   cursor: pointer;
-  font-size: 120%;
   padding: 3% 1%;
   margin: 0;
 }
@@ -79,13 +76,50 @@ h1 {
   transition: all 1s;
 }
 
-.accordion_check:hover~.accordion_img_wrapper {
+
+@media screen and (min-width: 821px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  .accordion_title {
+    font-size: 2em;
+  }
+
+  .accordion_check:hover~.accordion_img_wrapper {
     max-height: 100vh;
     transition: all 1s;
-}
+  }
 
-.accordion_img_wrapper:hover {
+  .accordion_img_wrapper:hover {
     max-height: 100vh;
     transition: all 1s;
+  }
 }
 
+@media screen and (max-width: 820px) {
+  h1 {
+    font-size: 4em;
+  }
+
+  .accordion_title {
+    font-size: 3em;
+    padding: 5% 1%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .accordion_title {
+    font-size: 1.2em;
+    padding: 10% 1%;
+  }
+
+  .accordion_img {
+    height: 12em;
+    width: 12em;
+  }
+}
