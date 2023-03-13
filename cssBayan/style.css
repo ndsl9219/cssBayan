@@ -1,0 +1,157 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Comic Sans MS';
+}
+
+h1 {
+  padding: 1% 1%;
+  font-weight: bold;
+  color: black;
+}
+
+.accordion {
+  width: 60%;
+  padding-top: 2em;
+  margin: 0 auto;
+  color: rgb(30,95,230);
+}
+
+.accordion_wrapper {
+  border-bottom: thin solid rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.accordion_title {
+  position: relative;
+  display: block;
+  padding: 3% 1%;
+  margin: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.accordion_img_wrapper {
+  display: flex;
+  justify-content: center;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.accordion_img {
+  width: max-content;
+  height: max-content;
+  padding: 1% 0%;
+  cursor: pointer;
+}
+
+.accordion_check {
+  display: none;
+}
+  
+.accordion_title:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  display: none;
+  border-style: solid;
+  border-width: 0.5em 0.3em 0 0.3em;
+  border-color: rgba(0,0,0,0.5) transparent transparent transparent;
+  transition: all 1s;
+}
+  
+.accordion_check:checked~.accordion_title:after {
+  transform: rotate(180deg);
+  border-color: rgba(243, 6, 6, 0.9) transparent transparent transparent;
+}
+  
+.accordion_check:checked~.accordion_img_wrapper {
+  max-height: 100vh;
+  transition: all 1s;
+}
+
+.accordion_check:checked~.accordion_title {
+  color: black;
+}
+
+
+@media screen and (min-width: 821px) {
+  h1 {
+    font-size: 4em;
+  }
+
+  .accordion_title {
+    font-size: 2em;
+  }
+
+  .accordion_check:hover~.accordion_img_wrapper {
+    max-height: 100vh;
+    transition: all 1s;
+  }
+
+  .accordion_img_wrapper:hover {
+    max-height: 100vh;
+    transition: all 1s;
+  }
+
+  .accordion:hover {
+    color: black;
+  }
+
+  .accordion:hover .accordion_wrapper .accordion_title:after {
+    display: block;
+  }
+
+  .accordion_img_wrapper:active .accordion_img {
+    opacity: 0.5;
+  }
+
+  .accordion_wrapper:active .accordion_title {
+    opacity: 0.5;
+    color: rgb(30,95,230);
+  }
+}
+
+@media screen and (max-width: 820px) {
+  h1 {
+    font-size: 4.5em;
+  }
+
+  .accordion_title {
+    padding: 5% 1%;
+    font-size: 3em;
+  }
+
+  .accordion_title:after {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .accordion_title {
+    padding: 10% 1%;
+    font-size: 1.2em;
+  }
+
+  .accordion_img {
+    width: 12em;
+    height: 12em;
+  }
+
+  .accordion_title:after {
+    display: block;
+  }
+}
