@@ -7,8 +7,6 @@
 }
 
 body {
-  display: flex;
-  align-items: center;
   height: 100vh;
   font-family: 'Comic Sans MS';
 }
@@ -21,6 +19,7 @@ h1 {
 
 .accordion {
   width: 60%;
+  padding-top: 2em;
   margin: 0 auto;
   color: rgb(30,95,230);
 }
